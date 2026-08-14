@@ -47,24 +47,32 @@ section { position: relative; z-index: 1; padding: 90px 0; }
 /* ═══ BURGER / MOBILE MENU ═══ */
 .burger { display: none; position: fixed; top: 52px; right: 24px; transform: translateY(-50%); width: 22px; height: 15px; cursor: pointer; z-index: 300; flex-direction: column; justify-content: space-between; }
 .burger span { display: block; width: 100%; height: 2px; background: #fff; transition: all .3s ease; }
-.burger.open span { background: var(--ink); }
-body.scrolled .burger:not(.open) span { background: var(--ink); }
+.burger.open span { background: #fff; }
 .burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
 .burger.open span:nth-child(2) { opacity: 0; }
 .burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-#mnav { position: fixed; top: 0; right: 0; width: 80%; max-width: 300px; height: 100vh; background: var(--blush); z-index: 260; padding: 100px 32px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; transform: translateX(100%); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+#mnav {
+  position: fixed; top: 0; right: 0; width: 80%; max-width: 300px; height: 100vh;
+  background: linear-gradient(180deg, var(--vino-dark) 0%, var(--vino) 65%);
+  z-index: 260; padding: 100px 32px 40px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+  transform: translateX(100%); transition: transform .4s cubic-bezier(.2,.8,.2,1);
+}
 #mnav.open { transform: translateX(0); }
 .mnav-badge { height: 80px; width: auto; margin-bottom: 16px; }
-#mnav a { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--ink); }
-#mnav a.mnav-cta { margin-top: 10px; background: var(--vino); color: #fff; padding: 12px 28px; font-family: 'Inter'; font-size: 1.3rem; font-weight: 600; }
-.mnav-divider { width: 40px; height: 1px; background: var(--line-strong); margin-bottom: 6px; }
+#mnav a { font-family: 'Fraunces', serif; font-size: 1.3rem; color: #fff; }
+#mnav a.mnav-cta { margin-top: 10px; background: #fff; color: var(--vino); padding: 12px 28px; font-family: 'Inter'; font-size: 1.3rem; font-weight: 600; }
+.mnav-divider { width: 40px; height: 1px; background: rgba(255,255,255,.25); margin-bottom: 6px; }
 #moverlay { position: fixed; inset: 0; background: rgba(20,11,13,.5); z-index: 250; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
 #moverlay.open { opacity: 1; pointer-events: auto; }
 
 /* ═══ HEADER ═══ */
 header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: transparent; border-bottom: 1px solid transparent; transition: background .3s ease, border-color .3s ease, box-shadow .3s ease; }
-header.scrolled { background: var(--blush); border-bottom-color: var(--line); box-shadow: 0 4px 20px rgba(29,17,20,.06); }
+header.scrolled {
+  background: linear-gradient(180deg, var(--vino-dark) 0%, var(--vino) 65%);
+  border-bottom-color: rgba(255,255,255,.1);
+  box-shadow: 0 6px 20px rgba(20,11,13,.35);
+}
 .h-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; height: 98px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
 .h-logo { justify-self: start; position: relative; display: block; height: 56px; width: 96px; }
 .h-logo img { position: absolute; top: 0; left: 0; height: 56px; width: auto; transition: opacity .3s ease; }
@@ -78,13 +86,9 @@ nav.desk a { font-family: 'Inter'; font-size: .9rem; font-weight: 600; color: rg
 nav.desk a:hover { color: #fff; }
 nav.desk a::after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 1px; background: var(--rose); transition: width .3s ease; }
 nav.desk a:hover::after { width: 100%; }
-header.scrolled nav.desk a { color: var(--ink); }
-header.scrolled nav.desk a:hover { color: var(--vino); }
-header.scrolled nav.desk a::after { background: var(--vino); }
 .h-cta { justify-self: end; background: transparent; border: 1.5px solid rgba(255,255,255,.5); color: #fff; padding: 12px 26px; font-family: 'Inter'; font-size: .84rem; font-weight: 600; transition: all .3s ease; }
 .h-cta:hover { border-color: #fff; background: rgba(255,255,255,.1); }
-header.scrolled .h-cta { background: var(--vino); border-color: var(--vino); color: #fff; }
-header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(--vino-dark); }
+header.scrolled .h-cta:hover { background: rgba(255,255,255,.12); }
 
 /* ═══ HERO — foto oscura + logo grande, layout izquierda/derecha ═══ */
 .hero {
