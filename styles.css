@@ -90,7 +90,7 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 .hero {
   position: relative; overflow: hidden; height: 100vh; height: 100svh;
   display: flex; flex-direction: column; justify-content: center;
-  padding: 0; background: var(--panel);
+  padding: 98px 0 0; background: var(--panel);
 }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-bg img {
@@ -325,7 +325,7 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
   header.scrolled .h-logo .logo-mobile-light { opacity: 0; }
   header.scrolled .h-logo .logo-mobile-dark { opacity: 1; }
 
-  .hero { height: 100vh; height: 100svh; }
+  .hero { height: 100vh; height: 100svh; padding: 104px 0 0; }
   .hero-grid { grid-template-columns: 1fr; gap: 10px; }
   .hero-mark { display: none; }
   .hero-sub-extra { display: none; }
