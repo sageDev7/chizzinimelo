@@ -7,7 +7,7 @@ html { color-scheme: only light; scroll-behavior: smooth; overflow-x: hidden; ma
   --vino-dark: #4E0F28;
   --vino-mid: #93284F;
   --rose: #E8B4C4;
-  --blush: #F7F5F4;
+  --blush: #EEEEF1;
   --ink: #1D1114;
   --ink-soft: rgba(29, 17, 20, .68);
   --panel: #140B0D;
@@ -155,46 +155,26 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 .id-item i { color: var(--rose); font-size: .8rem; }
 @keyframes idScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* ═══ AMPAROS DE SALUD — banner full-bleed ═══ */
-.spec-banner { position: relative; overflow: hidden; color: #fff; min-height: 60vh; display: flex; align-items: center; padding: 0; }
-.spec-bg { position: absolute; inset: 0; z-index: 0; background-image: url('https://images.pexels.com/photos/20519877/pexels-photo-20519877.jpeg?cs=srgb&fm=jpg'); background-size: cover; background-position: center 42%; filter: grayscale(1) contrast(1.1) brightness(.6); }
-.spec-tint { position: absolute; inset: 0; z-index: 0; background: linear-gradient(100deg, rgba(20,11,13,.92) 0%, rgba(124,28,64,.65) 45%, rgba(78,15,40,.45) 100%); }
-.spec-inner { position: relative; z-index: 1; max-width: 720px; margin: 0 clamp(24px, 8vw, 130px); }
-.spec-inner .eyebrow { color: var(--rose); font-size: .76rem; max-width: none; }
-.spec-inner h2 { color: #fff; font-size: clamp(2.4rem, 4.6vw, 3.6rem); margin-bottom: 1.4rem; }
-.spec-inner p { color: rgba(255,255,255,.85); line-height: 1.75; font-size: 1.05rem; margin-bottom: 2rem; max-width: 560px; }
-.spec-tags { display: flex; flex-wrap: wrap; gap: 10px; }
-.spec-tags span { border: 1px solid rgba(255,255,255,.28); color: #fff; font-size: .78rem; padding: 8px 18px; }
-
-/* ═══ CIVIL Y FAMILIA — banner alterno, alineado a la derecha ═══ */
-.spec-banner.alt {
-  background:
-    repeating-linear-gradient(160deg, transparent 0px, transparent 100px, rgba(255,255,255,.05) 100px, rgba(255,255,255,.05) 101px),
-    radial-gradient(ellipse 70% 90% at 15% 15%, rgba(232,180,196,.16) 0%, transparent 60%),
-    linear-gradient(250deg, var(--vino) 0%, var(--vino-dark) 100%);
-  justify-content: flex-end; min-height: 52vh;
+/* ═══ ÁREAS DE PRÁCTICA — grid de 7 tarjetas ═══ */
+.areas-grid-section { background: var(--panel); }
+.areas-grid-section .eyebrow { color: var(--rose); }
+.areas-grid-section .sec-head h2 { color: #fff; }
+.areas-grid {
+  max-width: 1180px; margin: 0 auto; padding: 0 32px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
 }
-.spec-tint.alt { background: none; }
-.spec-motif {
-  position: absolute; z-index: 0; top: 50%; left: clamp(20px, 6vw, 90px); transform: translateY(-50%);
-  font-size: min(22vw, 220px); color: rgba(255,255,255,.06); pointer-events: none;
+.area-card {
+  position: relative; display: flex; flex-direction: column;
+  background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.1);
+  padding: 34px 28px; transition: all .25s ease;
 }
-.spec-banner.alt .spec-inner { margin-left: auto; max-width: 820px; text-align: right; }
-.spec-banner.alt .spec-tags { justify-content: flex-end; }
-.spec-banner.alt .spec-inner p { margin-left: auto; max-width: none; }
-
-/* ═══ CTA PROPIO DE CADA ÁREA — ocupa el espacio libre del lado opuesto al contenido ═══ */
-.spec-cta {
-  position: absolute; z-index: 2; top: 50%; transform: translateY(-50%);
-  display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
-  background: transparent;
-  font-family: 'Inter', sans-serif; font-weight: 600; font-size: .88rem; color: #fff;
-  border: 1.5px solid rgba(255,255,255,.5); padding: 16px 30px; box-shadow: 0 8px 20px rgba(20,11,13,.35);
-  transition: all .25s ease;
-}
-.spec-cta:hover { background: rgba(255,255,255,.1); border-color: #fff; color: #fff; }
-.spec-cta--right { right: clamp(160px, 27vw, 400px); }
-.spec-cta--left { left: clamp(160px, 27vw, 400px); }
+.area-card:hover { background: rgba(255,255,255,.05); border-color: var(--vino); transform: translateY(-3px); }
+.area-card:last-child { grid-column: 2; }
+.area-num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; color: var(--rose); font-size: 1.3rem; margin-bottom: .8rem; display: block; }
+.area-card h3 { font-family: 'Fraunces', serif; font-weight: 600; color: #fff; font-size: 1.25rem; margin-bottom: .7rem; }
+.area-card p { color: rgba(255,255,255,.7); line-height: 1.65; font-size: .92rem; margin-bottom: 1.4rem; flex: 1; }
+.area-more { display: inline-flex; align-items: center; gap: 8px; color: var(--rose); font-family: 'Inter'; font-weight: 600; font-size: .84rem; transition: gap .25s ease; }
+.area-card:hover .area-more { gap: 14px; }
 
 /* ═══ CÓMO TRABAJAMOS — timeline vertical ═══ */
 .timeline { background: var(--blush); }
@@ -309,8 +289,8 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 
 /* ═══════════════════ RESPONSIVE ═══════════════════ */
 @media (max-width: 1024px) {
-  .spec-banner { flex-direction: column; justify-content: center !important; }
-  .spec-cta { position: static; transform: none; margin: 8px auto 96px; }
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
+  .area-card:last-child { grid-column: 1 / -1; max-width: calc(50% - 11px); margin: 0 auto; }
   .hero-inner h1 { max-width: 100%; }
   .about-teaser-grid { grid-template-columns: 1fr; }
   .about-teaser-photo { height: 340px; }
@@ -372,12 +352,8 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 }
 
 @media (max-width: 768px) {
-  .spec-banner { min-height: 70vh; text-align: center; }
-  .spec-inner { margin: 0 auto; padding: 60px 26px; }
-  .spec-tags { justify-content: center; }
-  .spec-banner.alt .spec-inner { margin: 0 auto; text-align: center; }
-  .spec-banner.alt .spec-inner p { margin: 0 auto 2rem; }
-  .spec-banner.alt .spec-tags { justify-content: center; }
+  .areas-grid { grid-template-columns: 1fr; }
+  .area-card:last-child { grid-column: auto; max-width: none; margin: 0; }
 
   .about-teaser-content { text-align: center; padding: 50px 26px; }
   .about-teaser-content p.bio { margin-left: auto; margin-right: auto; }
