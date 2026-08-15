@@ -121,7 +121,7 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 .hero-inner .eyebrow { color: var(--rose); }
 .hero-inner h1 {
   font-size: clamp(2.2rem, 4.4vw, 3.8rem); color: #fff; letter-spacing: -.02em; line-height: 1.15;
-  margin-bottom: 1.4rem;
+  max-width: 620px; margin-bottom: 1.4rem;
 }
 .hero-inner h1 em { font-style: italic; color: var(--vino-mid); font-weight: 500; }
 .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,.8); line-height: 1.7; max-width: 560px; margin-bottom: 1.8rem; }
@@ -156,7 +156,11 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 @keyframes idScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* ═══ ÁREAS DE PRÁCTICA — grid de 7 tarjetas ═══ */
-.areas-grid-section { background: var(--panel); }
+.areas-grid-section {
+  background:
+    repeating-linear-gradient(160deg, transparent 0px, transparent 100px, rgba(255,255,255,.04) 100px, rgba(255,255,255,.04) 101px),
+    var(--panel);
+}
 .areas-grid-section .eyebrow { color: var(--rose); }
 .areas-grid-section .sec-head h2 { color: #fff; }
 .areas-grid {
@@ -353,6 +357,7 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 
 @media (max-width: 768px) {
   .areas-grid { grid-template-columns: 1fr; }
+  .area-card { align-items: center; text-align: center; }
   .area-card:last-child { grid-column: auto; max-width: none; margin: 0; }
 
   .about-teaser-content { text-align: center; padding: 50px 26px; }
