@@ -397,7 +397,7 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
   header.scrolled .h-logo .logo-mobile-light { opacity: 0; }
   header.scrolled .h-logo .logo-mobile-dark { opacity: 1; }
 
-  .hero { height: 100vh; height: 100svh; padding: 148px 0 0; }
+  .hero { height: 100vh; height: 100svh; padding: 122px 0 0; }
   .hero-grid { grid-template-columns: 1fr; gap: 10px; }
   .hero-mark { display: none; }
   .hero-sub-extra { display: none; }
@@ -414,7 +414,7 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 }
 
 @media (max-width: 768px) and (max-height: 780px) {
-  .hero { padding-top: 132px; }
+  .hero { padding-top: 122px; }
   .h-logo { height: 85px !important; width: 215px !important; }
   .h-logo .logo-mobile { height: 85px !important; }
   .hero-inner h1 { font-size: clamp(1.9rem, 7.4vw, 2.3rem); margin-bottom: .7rem; }
