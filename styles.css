@@ -25,7 +25,7 @@ img { max-width: 100%; display: block; }
 button { font-family: inherit; cursor: pointer; }
 section { position: relative; z-index: 1; padding: 90px 0; }
 
-.eyebrow { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: .18em; font-size: .76rem; font-weight: 600; color: var(--vino); margin-bottom: 1rem; }
+.eyebrow { font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: .18em; font-size: .76rem; font-weight: 600; line-height: 1.4; color: var(--vino); margin-bottom: 1rem; }
 .eyebrow-light { color: var(--rose); }
 
 .sec-head { max-width: 680px; margin: 0 auto 44px; text-align: center; padding: 0 24px; }
@@ -60,7 +60,7 @@ body.scrolled .burger:not(.open) span { background: var(--ink); }
   transform: translateX(100%); transition: transform .4s cubic-bezier(.2,.8,.2,1);
 }
 #mnav.open { transform: translateX(0); }
-.mnav-badge { height: 104px; width: auto; margin-bottom: 16px; }
+.mnav-badge { height: 65px; width: auto; margin-bottom: 16px; }
 #mnav a { font-family: 'Fraunces', serif; font-size: 1.1rem; color: var(--ink); }
 #mnav a.mnav-cta { margin-top: 10px; background: var(--vino); color: #fff; padding: 10px 24px; font-family: 'Inter'; font-size: 1.1rem; font-weight: 600; }
 .mnav-divider { width: 34px; height: 1px; background: var(--line-strong); margin-bottom: 5px; }
@@ -80,7 +80,7 @@ header.scrolled {
 }
 header.scrolled::before { opacity: 1; }
 .h-inner { max-width: 1280px; margin: 0 auto; padding: 0 32px; height: 118px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
-.h-logo { justify-self: start; position: relative; display: block; height: 78px; width: 197px; }
+.h-logo { justify-self: start; position: relative; display: block; height: 78px; width: 275px; }
 .h-logo img { position: absolute; top: 0; left: 0; height: 78px; width: auto; transition: opacity .3s ease; }
 .h-logo .logo-light { opacity: 1; }
 .h-logo .logo-dark { opacity: 0; }
@@ -103,9 +103,10 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 /* ═══ HERO — foto oscura + logo grande, layout izquierda/derecha ═══ */
 .hero {
   position: relative; overflow: hidden; height: 100vh; height: 100svh;
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 118px 0 0; background: var(--panel);
+  display: flex; flex-direction: column;
+  padding: 98px 0 0; background: var(--panel);
 }
+.hero-center-wrap { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; }
 .hero-bg { position: absolute; inset: 0; z-index: 0; }
 .hero-bg img {
   width: 100%; height: 100%; object-fit: cover; object-position: center 35%;
@@ -116,9 +117,12 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
   background:
     linear-gradient(180deg, rgba(20,11,13,.95) 0%, rgba(78,15,40,.95) 100%);
 }
-.hero-inner { position: relative; z-index: 2; max-width: 1320px; margin: 0 auto; padding: 0 clamp(24px, 5vw, 70px); width: 100%; }
+.hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 0 32px; width: 100%; }
 .hero-grid { display: grid; grid-template-columns: 1.8fr .7fr; align-items: center; gap: 40px; }
-.hero-inner .eyebrow { color: var(--rose); }
+.hero-eyebrow-fixed { position: relative; z-index: 2; width: 100%; }
+.hero-eyebrow-inner { max-width: 1280px; margin: 0 auto; padding: 10px 32px 0; }
+.hero-eyebrow-fixed .eyebrow, .hero-inner .eyebrow { color: var(--rose); }
+.hero-eyebrow-fixed .eyebrow { margin-bottom: 2.6rem; display: inline-block; text-align: center; }
 .hero-inner h1 {
   font-size: clamp(2.2rem, 4.4vw, 3.8rem); color: #fff; letter-spacing: -.02em; line-height: 1.15;
   max-width: 620px; margin-bottom: 1.4rem;
@@ -325,7 +329,7 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 .close-phone i { color: var(--rose); }
 
 .footer-top { max-width: 1160px; margin: 0 auto; padding: 50px 32px 40px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 50px; border-top: 1px solid rgba(255,255,255,.12); }
-.footer-brand img { height: 109px; margin-bottom: 22px; }
+.footer-brand img { height: 76px; margin-bottom: 22px; }
 .footer-tagline { color: rgba(255,255,255,.6); line-height: 1.7; font-size: .92rem; max-width: 320px; }
 .footer-col h5 { font-family: 'Inter'; text-transform: uppercase; letter-spacing: .1em; font-size: .78rem; color: var(--vino); margin-bottom: 20px; }
 .footer-col a, .footer-col p { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.7); font-size: .92rem; line-height: 2.1; transition: color .25s ease; }
@@ -389,20 +393,22 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
   .burger { display: flex; }
   #siteHeader { height: 122px; }
   .h-inner { height: 122px; grid-template-columns: 1fr; justify-items: center; }
-  .h-logo { justify-self: center; height: 101px; width: 254px; }
+  .h-logo { justify-self: center; height: 83px; width: 292px; }
   .h-logo .logo-light, .h-logo .logo-dark { display: none; }
-  .h-logo .logo-mobile { display: block; position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 101px; width: auto; transition: opacity .3s ease; }
+  .h-logo .logo-mobile { display: block; position: absolute; top: 0; left: 50%; transform: translateX(-50%); height: 83px; width: auto; transition: opacity .3s ease; }
   .h-logo .logo-mobile-light { opacity: 1; }
   .h-logo .logo-mobile-dark { opacity: 0; }
   header.scrolled .h-logo .logo-mobile-light { opacity: 0; }
   header.scrolled .h-logo .logo-mobile-dark { opacity: 1; }
 
-  .hero { height: 100vh; height: 100svh; padding: 122px 0 0; }
+  .hero { height: auto; min-height: 100vh; min-height: 100svh; padding: 99px 0 44px; }
   .hero-grid { grid-template-columns: 1fr; gap: 10px; }
   .hero-mark { display: none; }
   .hero-sub-extra { display: none; }
   .hero-inner { text-align: center; }
-  .hero-inner .eyebrow { margin-bottom: .7rem; font-size: .68rem; }
+  .hero-eyebrow-fixed { text-align: center; }
+  .hero-eyebrow-inner { padding-top: 8px; }
+  .hero-eyebrow-fixed .eyebrow { margin-bottom: 1.8rem; font-size: .68rem; }
   .hero-inner h1 { margin-left: auto; margin-right: auto; font-size: clamp(2.1rem, 8vw, 2.6rem); margin-bottom: .9rem; }
   .hero-sub { margin-left: auto; margin-right: auto; margin-bottom: 1.5rem; font-size: .95rem; }
   .hero-ctas { justify-content: center; gap: 14px; }
@@ -414,9 +420,9 @@ header.scrolled .h-cta:hover { background: var(--vino-dark); border-color: var(-
 }
 
 @media (max-width: 768px) and (max-height: 780px) {
-  .hero { padding-top: 122px; }
-  .h-logo { height: 85px !important; width: 215px !important; }
-  .h-logo .logo-mobile { height: 85px !important; }
+  .hero { padding-top: 91px; }
+  .h-logo { height: 69px !important; width: 244px !important; }
+  .h-logo .logo-mobile { height: 69px !important; }
   .hero-inner h1 { font-size: clamp(1.9rem, 7.4vw, 2.3rem); margin-bottom: .7rem; }
   .hero-sub { font-size: .88rem; margin-bottom: 1.1rem; }
   .hero-ctas .btn { padding: 13px 26px; }
